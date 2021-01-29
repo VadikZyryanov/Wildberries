@@ -4,6 +4,6 @@
 -HTML
 -CSS
 -JavaScript
-### Библотека:
+### Библотеки:
 -Bootstrap v5
 -Swiper Slider JS
