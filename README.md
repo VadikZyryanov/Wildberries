@@ -1,9 +1,9 @@
 # Wildberries - Учебный проект
 Выполнил Зырянов Вадим
 ## В проекте использовались языки:
--HTML
--CSS
--JavaScript
+- HTML
+- CSS
+- JavaScript
 ### Библотеки:
--Bootstrap v5
--Swiper Slider JS
+- Bootstrap v5
+- Swiper Slider JS
