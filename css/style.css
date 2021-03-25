@@ -34,6 +34,11 @@ img {
   letter-spacing: 0.5px;
 }
 
+button:focus,
+button:active {
+  outline: none;
+}
+
 button {
   cursor: pointer;
 }
@@ -74,6 +79,22 @@ button {
 
 .cart-count {
   margin-left: 10px;
+}
+
+.clear-cart {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: red;
+  padding: 8px 16px;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .show-goods .slider,
@@ -369,10 +390,10 @@ button {
 .modal {
   background-color: #e0e0ff;
   min-width: 600px;
-  max-height: 400px;
+  max-height: auto;
   padding: 30px;
-  overflow: scroll;
   position: relative;
+  border-radius: 10px;
 }
 
 .modal-header {
