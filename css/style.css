@@ -60,7 +60,7 @@ button {
 
 .button-accessories,
 .button-clothing {
-  max-width: 124px;
+  width: 124px;
   text-decoration: none;
 }
 
