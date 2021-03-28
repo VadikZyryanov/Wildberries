@@ -117,11 +117,16 @@ button {
 }
 
 .slide-1 {
-  background: #b4d1e0 url("../img/slide-image-1.png") no-repeat top right 30%;
+  background: #b4d1e0 url("../img/slide-image-1.png") no-repeat top 70% right
+    25%;
 }
 
 .slide-2 {
-  background: #b9e0b4 url("../img/slide-image-1.png") no-repeat top right 30%;
+  background: #b9e0b4 url("../img/slide-image-2.png") no-repeat center right 30%;
+}
+
+.slide-3 {
+  background: #b9e0b4 url("../img/slide-image-3.png") no-repeat top right 30%;
 }
 
 .label {
@@ -394,6 +399,8 @@ button {
   padding: 30px;
   position: relative;
   border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .modal-header {
@@ -427,7 +434,7 @@ button {
   padding: 10px;
   border-radius: 20px;
   border-style: none;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .cart-table {
@@ -479,10 +486,6 @@ button {
 }
 
 @media (max-width: 1200px) {
-  .slide-1 {
-    background-size: cover;
-  }
-
   .card-3 {
     background-size: cover;
   }
@@ -495,8 +498,13 @@ button {
 
   .modal {
     min-width: 400px;
-    max-height: 300px;
     padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-table {
+    min-width: auto;
   }
 }
 
@@ -505,6 +513,12 @@ button {
     font-size: 36px;
     line-height: 1.4;
     margin-bottom: 0;
+  }
+  .modal-form {
+    flex-direction: column;
+  }
+  .modal-input {
+    max-width: 160px;
   }
 
   .card {
@@ -522,7 +536,9 @@ button {
 
   .modal {
     min-width: 300px;
-    max-height: 400px;
     padding: 20px;
+  }
+  .slide-2 {
+    background-position: center;
   }
 }

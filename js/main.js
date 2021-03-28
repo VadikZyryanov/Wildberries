@@ -123,9 +123,7 @@ const cart = {
   },
 
   clearCartGoods() {
-    cartTableGoods.textContent = '';
-    cardTableTotal.textContent = '0$';
-    this.cartGoods = [];
+    this.cartGoods.length = 0;
     cart.renderCart();
   },
 }
@@ -275,3 +273,57 @@ buttonAccessories.addEventListener('click', event => {
   filterCards ("category", "Accessories")
 });
 
+
+//отправка формы
+
+const modalForm = document.querySelector('.modal-form');
+const modalInput = document.querySelectorAll('.modal-input');
+
+const postData = dataUser => fetch('server.php', {
+  method: 'POST',
+  body: dataUser,
+});
+
+modalForm.addEventListener('submit', event => {
+  event.preventDefault();
+  
+  const formData = new FormData(modalForm);
+  formData.append('cart', JSON.stringify(cart.cartGoods));
+  
+  if (cart.cartGoods.length === 0){
+    alert('Ошибка: корзина пустая!')
+  }
+
+  let check = "true"
+  modalInput.forEach((input) => {
+    const value = input.value
+    if (value.trim() === '') {
+      check = "false"
+    }
+  })
+
+  if (check === "false") {
+    alert('Ошибка: неверно указаны имя или телефон')
+  }
+
+  if (cart.cartGoods.length != 0 && check == "true") {
+    postData(formData)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.status);
+        }
+        alert('Ваш заказ успешно отправлен, с вами свяжутся в ближайшее время')
+        console.log(response.statusText);
+      })
+      .catch(err => {
+        alert('Ошибка отправки формы, повторите позже');
+        console.error(err)
+      })
+      .finally(() => {
+        closeModal();
+        modalForm.reset();
+        cart.cartGoods.length = 0;
+        cart.renderCart();
+      });
+  }
+});
